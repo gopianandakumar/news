@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+      .baba{
+        
+        margin:20px;
+        display: inline-block;
+        padding-left:40px;
+        padding-right: 15px;
+        
+        
+
+      }
+      .card{
+        height: 700px;
+      }
+      .card-text{
+        height: 93px;
+      }
+      h1{
+        text-align: center;
+        border: 2px solid white;
+        background-color:#057a87;
+        color:white;
+
+      }
+      #bt:hover{
+        background-color: green;
+        color:yellow;
+
+      }
+    </style>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+   
+<h1>NEWS BLOG USING newsApi and FLASK by GopiAnanda</h1>
+
+ {% for post in news %}
+ <div class="baba" class="container">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{post['urlToImage']}}" alt="Card image cap" height=190px width=150px target="_blank">
+  <div class="card-body">
+    <h5 class="card-title"><a href="{{post['url']}}" target="_blank">{{post['title']}}</a> </h5>
+    <p class="card-text" >{{post['description']}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{post['publishedAt']}}</li>
+    <li class="list-group-item">{{post['author']}}</li>
+      <li class="list-group-item"  ><a id="bt" class="btn btn-primary" href="{{post['url']}}" target="_blank">go to site</a></li>
+    
+  </ul>
+  
+</div>
+</div>
+{% endfor %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
